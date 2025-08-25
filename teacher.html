@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <h2>Class Teacher Dashboard</h2>
+        <div class="dashboard-cards">
+            <div class="card">
+                <h3>Total Students</h3>
+                <p id="total-students">0</p>
+            </div>
+        </div>
+
+        <h3>Student Attendance</h3>
+        <table id="attendance-table">
+            <thead>
+                <tr>
+                    <th>Roll No.</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Reason (if Absent)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Attendance rows will be inserted here -->
+            </tbody>
+        </table>
+        <button id="save-attendance">Save Attendance</button>
+        <button id="download-attendance-pdf">Download PDF</button>
+
+        <h3>Class Test Marks</h3>
+        <table id="marks-table">
+            <thead>
+                <tr>
+                    <th>Roll No.</th>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Marks rows will be inserted here -->
+            </tbody>
+        </table>
+        <button id="save-marks">Save Marks</button>
+        <button id="download-marks-pdf">Download PDF</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <script src="teacher.js"></script>
+</body>
+</html>
