@@ -1,11 +1,31 @@
+:root {
+    --primary-color: #007bff;
+    --primary-color-hover: #0056b3;
+    --background-light: #f4f4f4;
+    --background-white: #fff;
+    --border-color: #ccc;
+    --border-color-light: #ddd;
+    --border-radius-sm: 3px;
+    --border-radius-md: 5px;
+    --text-color-light: #aaa;
+    --text-color-dark: black;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(--background-light);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 .container {
@@ -14,10 +34,10 @@ body {
 }
 
 .login-container {
-    background-color: #fff;
+    background-color: var(--background-white);
     padding: 2rem;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 0 10px var(--shadow-color);
 }
 
 h2 {
@@ -38,33 +58,31 @@ h2 {
 .input-group select {
     width: 100%;
     padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
 }
 
 button {
     width: 100%;
     padding: 0.75rem;
-    background-color: #007bff;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--background-white);
     border: none;
-    border-radius: 3px;
+    border-radius: var(--border-radius-sm);
     cursor: pointer;
     font-size: 1rem;
+    transition: background-color 0.2s ease-in-out;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: var(--primary-color-hover);
 }
 
 #download-attendance-pdf,
 #download-marks-pdf {
-    background-color: #007bff;
-    color: white;
+    width: auto; /* Override 100% width from generic button */
     padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: var(--border-radius-md);
     margin-left: 10px;
 }
 
@@ -73,9 +91,9 @@ button:hover {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 2rem;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-white);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 0 10px var(--shadow-color);
 }
 
 .dashboard h2 {
@@ -91,7 +109,7 @@ button:hover {
 .card {
     background-color: #f8f9fa;
     padding: 1.5rem;
-    border-radius: 5px;
+    border-radius: var(--border-radius-md);
     flex-grow: 1;
     text-align: center;
 }
@@ -105,7 +123,7 @@ table {
 table th,
 table td {
     padding: 0.75rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color-light);
     text-align: left;
 }
 
@@ -132,11 +150,11 @@ table th {
     border: 1px solid #888;
     width: 80%;
     max-width: 500px;
-    border-radius: 5px;
+    border-radius: var(--border-radius-md);
 }
 
 .close {
-    color: #aaa;
+    color: var(--text-color-light);
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -144,7 +162,7 @@ table th {
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: var(--text-color-dark);
     text-decoration: none;
     cursor: pointer;
 }
